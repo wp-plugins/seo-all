@@ -171,6 +171,10 @@ function seo_all_PushBaiDu($id=null,$p=null){
 	}else{
 		global $post_id,$post;
 	}
+	$N = get_post_meta( $post_id, 'Baidu_Push', true);
+	if( $N ){
+		return;
+	}
     $PushUrl = get_permalink($post_id);
     $PushDate = $post->post_data;
     $PushXml = '<?xml version="1.0" encoding="UTF-8"?>
@@ -183,5 +187,8 @@ function seo_all_PushBaiDu($id=null,$p=null){
         </url>
     </urlset>';
     $wp_http_obj = new WP_Http();
-    return $wp_http_obj->post($key, array('body' => $PushXml, 'headers' => array('Content-Type' => 'text/xml')));
+    if ( $wp_http_obj->post($key, array('body' => $PushXml, 'headers' => array('Content-Type' => 'text/xml'))) ){
+		update_post_meta( $post_id, 'Baidu_Push', 1);
+		return;
+	}
 }
