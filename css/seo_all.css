@@ -1,0 +1,104 @@
+#seo_all input,textarea{
+	border: 1px solid #a0b3d6; 
+    border-color: rgba(82, 168, 236, 0.8);
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+#sa_index{
+	width:60%;
+	margin:0px auto;
+}
+#sa_sitemap{
+	width:60%;
+	margin:0px auto;
+}
+#sa_link{
+	width:60%;
+	margin:0px auto;
+}
+#sa_push{
+	width:60%;
+	margin:0px auto;
+}
+#sa_robots{
+	width:60%;
+	margin:0px auto;
+}
+#sa_global{
+	width:60%;
+	margin:0px auto;
+}
+#sa_other{
+	width:60%;
+	margin:0px auto;
+}
+#seo_all>div h3{
+	display:inline;
+}
+#seo_all .nav-tab-wrapper{
+	margin-bottom:40px;
+}
+#seo_all span[for]{
+	display:block;
+	margin-bottom:20px;
+}
+input[name='index_title']{
+	width:50%;
+}
+input[name='index_keywords']{
+	width:50%;
+}
+input[name='index_robots']{
+	width:50%;
+}
+input[name='other_taxonomy']{
+	width:50%;
+}
+input[name='link_href']{
+	width:50%;
+}
+span[for='index_description']>h3{
+	display:block;
+	float:left;
+	margin:0;
+}
+span[for='index_description']>textarea{
+	display:block;
+	float:left;
+}
+span[for='index_description']{
+	overflow:hidden;
+}
+#seo_all textarea{
+	width: 50%;
+	height:10em;
+}
+span[for$='_button']{
+	margin:0px auto;
+	width:30%;
+}
+span[for$='_button']>button{
+	width:100%;
+}
+#seo_post>span{
+	display:block;
+	margin-bottom:8px;
+}
+.message { clear:both; font: 12px/1.125 Arial; width:100%; }
+.message .s_b b, .message span.s_i i { font-size:1px; line-height:1px; overflow:hidden; display:block; clear:both; }
+.message .s_b b, .message span.s_i i, .message .info { background:rgb(223, 240, 216); border:#66CC99 solid; }
+.message b.b1 { border-width:1px 0 0 0; margin:0 2px; height:0px; }
+.message b.b2 { border-width:0 1px; margin:0 1px; height:1px; }
+.message span.s_i i { height:1px; border-width:0 1px; }
+.message .i1 { width:0px; margin-left:36px; }
+.message .i2 { width:2px; margin-left:35px; }
+.message .i3 { width:4px; margin-left:34px; }
+.message .i4 { width:6px; margin-left:33px; }
+.message .i5 { width:8px; margin-left:32px; }
+.message .i6 { width:10px; margin-left:31px; margin-top:-1px; }
+.message .info { border-width:0 1px; color:#333; padding:10px;}
+
+div.Warning{clear:both;}
+div.Warning .s_b b,div.Warning .s_i i, div.Warning .info { background:#FFCC99; border-color:#FF6666; }
+
+div.danger {clear:both;}
+div.danger .s_b b,div.danger .s_i i, div.danger .info { background:#FFFFCC; border-color:#FF6666; }
