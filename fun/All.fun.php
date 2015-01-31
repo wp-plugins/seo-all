@@ -1,5 +1,5 @@
 <?php
-function seo_all_gourl(){  
+function seo_all_go_url(){  
 	global $pagenow;
 	if(is_home&&$pagenow=='index.php'){
 	$location=$_GET['r'];
@@ -10,7 +10,7 @@ function seo_all_gourl(){
 	}
 }
 
-function to_seo_all(){
+function seo_all_fun(){
 	include SA_LIB . 'SeoByNaiZui.Class.php';
 	if( is_home() ){
 		include SA_LIB . 'HomeSeoByNaiZui.Class.php';
@@ -92,13 +92,13 @@ function seo_all_link_nofollow( $content ) {
     return $content;
 }
 
-function sa_no_category_base_refresh_rules() {
+function seo_all_no_category_base_refresh_rules() {
     global $wp_rewrite;
     $wp_rewrite ->flush_rules();
 }
 
-add_action('init', 'sa_no_category_base_permastruct');
-function sa_no_category_base_permastruct() {
+add_action('init', 'seo_all_no_category_base_permastruct');
+function seo_all_no_category_base_permastruct() {
     global $wp_rewrite, $wp_version;
     if (version_compare($wp_version, '3.4', '<')) {
         // For pre-3.4 support
@@ -108,8 +108,8 @@ function sa_no_category_base_permastruct() {
     }
 }
 // Add our custom category rewrite rules
-add_filter('category_rewrite_rules', 'sa_no_category_base_rewrite_rules');
-function sa_no_category_base_rewrite_rules($category_rewrite) {
+add_filter('category_rewrite_rules', 'seo_all_no_category_base_rewrite_rules');
+function seo_all_no_category_base_rewrite_rules($category_rewrite) {
     //var_dump($category_rewrite); // For Debugging
     $category_rewrite = array();
     $categories = get_categories(array('hide_empty' => false));
@@ -134,15 +134,15 @@ function sa_no_category_base_rewrite_rules($category_rewrite) {
 }
     
 // Add 'category_redirect' query variable
-add_filter('query_vars', 'sa_no_category_base_query_vars');
-function sa_no_category_base_query_vars($public_query_vars) {
+add_filter('query_vars', 'seo_all_no_category_base_query_vars');
+function seo_all_no_category_base_query_vars($public_query_vars) {
     $public_query_vars[] = 'category_redirect';
     return $public_query_vars;
 }
     
 // Redirect if 'category_redirect' is set
-add_filter('request', 'sa_no_category_base_request');
-function sa_no_category_base_request($query_vars) {
+add_filter('request', 'seo_all_no_category_base_request');
+function seo_all_no_category_base_request($query_vars) {
     //print_r($query_vars); // For Debugging
     if (isset($query_vars['category_redirect'])) {
         $catlink = trailingslashit(get_option('home')) . user_trailingslashit($query_vars['category_redirect'], 'category');
